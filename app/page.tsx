@@ -3,9 +3,8 @@ import HeroCursorMask from "@/components/HeroCursorMask";
 import InfiniteMarquee from "@/components/InfiniteMarquee";
 import IdentitySection from "@/components/IdentitySection";
 import WorkShowcase from "@/components/WorkShowcase";
-import AchievementsCarousel from "@/components/AchievementsCarousel";
 import TechStackSection from "@/components/TechStackSection";
-import ServicesSection from "@/components/ServicesSection";
+import ExperienceSection from "@/components/ExperienceSection";
 import CinematicFooter from "@/components/CinematicFooter";
 
 export default function Home() {
@@ -20,22 +19,19 @@ export default function Home() {
       {/* Dual Auto-Scrolling Tech Stack & Platform Marquee Ticker */}
       <InfiniteMarquee />
 
-      {/* Section 01: Identity, Engineering Philosophy & Animated Metrics */}
+      {/* Section 01: Identity, Engineering Philosophy & Factual Metrics (#sec-about) */}
       <IdentitySection />
 
-      {/* Section 02: Selected Work with Interactive Auto-Scroll Carousel & 3D Grid */}
+      {/* Section 02: Selected Work Showcase & 7-Part Detailed Case Studies (#sec-projects) */}
       <WorkShowcase />
 
-      {/* Auto-Playing Key Production Achievements & Enterprise Milestones Carousel */}
-      <AchievementsCarousel />
-
-      {/* Section 03: Tech Stack & Ecosystem with 3D Illustration & Floating Badges */}
+      {/* Section 03: Categorized Tech Stack & Ecosystem (#sec-skills) */}
       <TechStackSection />
 
-      {/* Section 04: Services Offered & High-Impact Capabilities */}
-      <ServicesSection />
+      {/* Section 04: Chronological Professional Experience Timeline (#sec-experience) */}
+      <ExperienceSection />
 
-      {/* Section 05: Cinematic Dark Footer & Direct Communication Channels */}
+      {/* Section 05: Cinematic Dark Footer, Direct Contact Channels & PDF Resume (#sec-contact) */}
       <CinematicFooter />
     </main>
   );

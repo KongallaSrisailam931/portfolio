@@ -1,13 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, X, ArrowUpRight, Terminal, Sparkles } from "lucide-react";
+import { Menu, X, ArrowUpRight, Terminal, FileText, Mail } from "lucide-react";
 
 const navLinks = [
-  { name: "01 / Identity", href: "#sec-identity" },
-  { name: "02 / Work", href: "#sec-showcase" },
-  { name: "03 / Tech Stack", href: "#sec-skills" },
-  { name: "04 / Services", href: "#sec-services" },
+  { name: "About", href: "#sec-about" },
+  { name: "Projects", href: "#sec-projects" },
+  { name: "Skills", href: "#sec-skills" },
+  { name: "Experience", href: "#sec-experience" },
+  { name: "Contact", href: "#sec-contact" },
 ];
 
 export default function Navbar() {
@@ -17,7 +18,7 @@ export default function Navbar() {
     <>
       {/* Floating Glass Linear Pill Header (Desktop) */}
       <header className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
-        <div className="pointer-events-auto flex items-center justify-between gap-6 px-6 py-3 rounded-full bg-gradient-to-r from-slate-950/85 via-slate-900/90 to-slate-950/85 border border-white/15 backdrop-blur-2xl max-w-5xl w-full shadow-2xl shadow-black/50">
+        <div className="pointer-events-auto flex items-center justify-between gap-6 px-6 py-3 rounded-full bg-slate-950/90 border border-white/15 backdrop-blur-2xl max-w-5xl w-full shadow-2xl shadow-black/50">
           
           {/* Logo / Monogram */}
           <a
@@ -29,15 +30,15 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col text-left">
               <span className="text-sm font-bold tracking-tight leading-none text-white group-hover:text-cyan-400 transition-colors">
-                Srisailam Kongalla
+                Kongalla Srisailam
               </span>
               <span className="text-[10px] font-mono text-cyan-400 font-semibold tracking-wider uppercase leading-none mt-1">
-                Full-Stack Lead
+                Full Stack Developer
               </span>
             </div>
           </a>
 
-          {/* Desktop Navigation Links with animated hover */}
+          {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center gap-1 font-mono text-xs font-semibold">
             {navLinks.map((link) => (
               <a
@@ -51,13 +52,24 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Right Action Button & Mobile Hamburger */}
-          <div className="flex items-center gap-3">
+          {/* Right Action Buttons */}
+          <div className="flex items-center gap-2.5">
             <a
-              href="#sec-cta-footer"
+              href="/Kongalla_Srisailam_Resume.pdf"
+              download="Kongalla_Srisailam_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden lg:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white/10 hover:bg-white/15 text-white border border-white/15 text-xs font-semibold transition-all"
+            >
+              <FileText className="w-3.5 h-3.5 text-cyan-400" />
+              <span>Resume</span>
+            </a>
+
+            <a
+              href="#sec-contact"
               className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 text-white text-xs font-bold hover:shadow-[0_0_20px_rgba(0,140,255,0.6)] hover:scale-105 transition-all duration-300 group"
             >
-              <span>Get in touch</span>
+              <span>Contact Me</span>
               <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
 
@@ -75,7 +87,7 @@ export default function Navbar() {
 
       {/* Hydration-Safe Mobile Drawer */}
       <div
-        className={`fixed inset-0 z-40 bg-gradient-to-b from-black/95 via-slate-950/95 to-black/95 backdrop-blur-2xl md:hidden transition-all duration-300 flex flex-col justify-between p-8 pt-28 ${
+        className={`fixed inset-0 z-40 bg-black/95 backdrop-blur-2xl md:hidden transition-all duration-300 flex flex-col justify-between p-8 pt-28 ${
           isOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -84,7 +96,7 @@ export default function Navbar() {
         <div className="flex flex-col gap-6">
           <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-wider mb-2">
             <Terminal className="w-4 h-4" />
-            <span>Navigation Index</span>
+            <span>Navigation Menu</span>
           </div>
           {navLinks.map((link) => (
             <a
@@ -97,6 +109,15 @@ export default function Navbar() {
               <ArrowUpRight className="w-4 h-4 text-slate-500" />
             </a>
           ))}
+          <a
+            href="/Kongalla_Srisailam_Resume.pdf"
+            download="Kongalla_Srisailam_Resume.pdf"
+            onClick={() => setIsOpen(false)}
+            className="flex items-center gap-2 text-cyan-400 font-mono text-base font-semibold py-2"
+          >
+            <FileText className="w-4 h-4" />
+            <span>Download PDF Resume</span>
+          </a>
         </div>
 
         <div className="flex flex-col gap-4">
@@ -105,8 +126,8 @@ export default function Navbar() {
             onClick={() => setIsOpen(false)}
             className="w-full py-4 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 text-white font-semibold text-center text-sm tracking-wide transition-all shadow-lg shadow-blue-600/30 flex items-center justify-center gap-2"
           >
+            <Mail className="w-4 h-4" />
             <span>kongallasrisailam931@gmail.com</span>
-            <ArrowUpRight className="w-4 h-4" />
           </a>
           <p className="text-center text-xs text-slate-400 font-mono">
             +91 9381695637 • Hyderabad, India
